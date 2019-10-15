@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.dragonli.service</groupId>
+		<artifactId>parent</artifactId>
+		<version>1.0</version>
+	</parent>
+	
+	<artifactId>dragonli-netty-core</artifactId>
+	<packaging>jar</packaging>
+	<name>dragonli-netty-core</name>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty-all</artifactId>
+		</dependency>
+
+	</dependencies>
+	
+
+	
+	<build>
+
+		<plugins>
+		
+			<plugin>
+         	<groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+            	<source>1.8</source>
+            	<target>1.8</target>
+            	<fork>true</fork>
+            	<encoding>UTF-8</encoding>
+            </configuration>
+         </plugin>
+         <plugin>
+         	<groupId>org.apache.maven.plugins</groupId>
+         	<artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+            	<encoding>UTF-8</encoding>
+            </configuration>
+         </plugin>
+		 <plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-sources</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+		
+			<!-- <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+
+				<configuration>
+					<executable>java</executable>
+					<arguments>
+						<argument>com.cta.codeonline.NettyServer</argument>
+					</arguments>
+				</configuration>
+			</plugin> -->
+			
+			<plugin>  
+	            <groupId>org.apache.maven.plugins</groupId>  
+	            <artifactId>maven-jar-plugin</artifactId>  
+	            <version>2.6</version>  
+	            <configuration>  
+	                <archive>  
+	                    <manifest>
+	                        <addClasspath>true</addClasspath>
+	                        <classpathPrefix>lib/</classpathPrefix> 
+	                        <mainClass>com.cta.codeonline.NettyBootstrap</mainClass>  
+	                    </manifest>  
+	                </archive>  
+	            </configuration>  
+	        </plugin>  
+	        <plugin>
+	            <groupId>org.apache.maven.plugins</groupId>  
+	            <artifactId>maven-dependency-plugin</artifactId>  
+	            <version>2.10</version>  
+	            <executions>  
+	                <execution>  
+	                    <id>copy-dependencies</id>  
+	                    <phase>package</phase>  
+	                    <goals>  
+	                        <goal>copy-dependencies</goal>  
+	                    </goals>
+	                    <configuration>
+	                        <outputDirectory>target/lib</outputDirectory>  
+	                    </configuration>  
+	                </execution>  
+	            </executions>  
+	        </plugin>
+	        
+	        <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<!-- 当执行mvn package时才会打包 -->
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<finalName>netty-core</finalName>
+	</build>
+</project>
