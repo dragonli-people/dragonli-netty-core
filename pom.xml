@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.dragonli.service</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0</version>
+		<version>1.0.1</version>
 	</parent>
 	
 	<artifactId>dragonli-netty-core</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-netty-core</name>
-	<version>1.0</version>
+	<version>1.0.1</version>
 
 	<dependencies>
 
@@ -22,7 +22,26 @@
 		</dependency>
 
 	</dependencies>
-	
+
+	<description>a lib project that provider netty service support</description>
+	<url>https://github.com/dragonli-people/dragonli-netty-core</url>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>dragonli studio team</name>
+			<email>dragonlistudio@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git@github.com:dragonli-people/dragonli-netty-core.git</connection>
+		<developerConnection>scm:git:git@github.com:dragonli-people/dragonli-netty-core.git</developerConnection>
+		<url>git@github.com:dragonli-people/dragonli-netty-core.git</url>
+	</scm>
 
 
 </project>
