@@ -5,13 +5,13 @@
 	<parent>
 		<groupId>org.dragonli.service</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 	</parent>
 	
 	<artifactId>dragonli-netty-core</artifactId>
 	<packaging>jar</packaging>
 	<name>dragonli-netty-core</name>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 
 	<dependencies>
 
